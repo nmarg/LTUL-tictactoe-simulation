@@ -32,7 +32,6 @@ def evaluate_state(board, current_player):
     elif is_full(board):
         return 0  # Draw
     else:
-        # Recursively evaluate future states
         next_player = PLAYER_X if current_player == PLAYER_O else PLAYER_O
         possible_moves = get_possible_moves(board)
         scores = []
@@ -73,7 +72,7 @@ def play_game(mode):
                 if board[move] == EMPTY:
                     valid_move = True
                 else:
-                    print("Invalid move, board position fulled, try again")
+                    print("Invalid move, board position already filled, try again:")
         else:
             move = make_bi_move(board, current_player)
         board[move] = current_player
