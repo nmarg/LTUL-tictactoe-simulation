@@ -88,6 +88,10 @@ if __name__ == "__main__":
     if mode == None:
         mode = "sim"
 
+    if mode not in ["sim", PLAYER_X, PLAYER_O]:
+        print("Invalid mode, valid modes are sim, X, O")
+        exit()
+
     if mode != "sim":
         print("When prompted enter moves from 1 to 9, board positions are as follows")
         print("['1', '2', '3']")
